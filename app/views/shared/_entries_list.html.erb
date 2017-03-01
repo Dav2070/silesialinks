@@ -8,7 +8,7 @@
           <div class="article-body">
             <%= truncate(entry.text, length: 100) %>
           </div>
-          <% if logged_in? && (current_user == entry.user) %>
+          <% if user_signed_in? && (current_user == entry.user) %>
             <div class="article-actions">
               <%= link_to "Edit this article", edit_entry_path(entry), class: "btn btn-xs btn-primary" %>
               <%= link_to "Delete this article", entry_path(entry), method: :delete,

@@ -8,13 +8,16 @@
 }
 
 #header{
+    font-size: 280%;
+    font-weight: bold;
+    color: black;
+}
+
+#header-div{
     margin-top: 200px;
     position: absolute;
     left: 30%;
     transform: translateX(-70%);
-    font-size: 280%;
-    font-weight: bold;
-    color: black;
 }
 
 .navbar{

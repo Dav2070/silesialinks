@@ -1,10 +1,16 @@
 <div id="top-container">
-    <%= link_to "Silesialinks", root_path, id: "header" %>
-    <%= render 'shared/messages' %>
+    <div id="header-div">
+        <%= link_to "Silesialinks", root_path, id: "header" %>
+        <% if user_signed_in? %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+        <% end %>
+    </div>
     <%# render 'layouts/navbar' %>
 </div>
 
+<%= render 'shared/messages' %>
+
 <script>
     $("#top-container").css("height", $(window).height()/5);
-    $("#header").css("margin-top", $(window).height()/14);
+    $("#header-div").css("margin-top", $(window).height()/14);
 </script>

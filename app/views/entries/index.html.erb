@@ -4,7 +4,7 @@
 <%= render "shared/entries_list" %>
 
 <div>
-  <% if logged_in? %>
-    <%= link_to "Neuer Eintrag", new_entry_path %>
+  <% if user_signed_in? %>
+    <%= link_to "Neuer Eintrag", new_entry_path, class: "entries_link" %>
   <% end %>
 </div>
