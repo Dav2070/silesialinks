@@ -1,0 +1,25 @@
+#top-container{
+    height: 400px;
+    width:100%;
+    background: #eaeaea;
+    position: relative;
+    margin-top: -20px;
+    margin-bottom: 50px;
+}
+
+#header{
+    margin-top: 200px;
+    position: absolute;
+    left: 30%;
+    transform: translateX(-70%);
+    font-size: 280%;
+    font-weight: bold;
+    color: black;
+}
+
+.navbar{
+    position: absolute;
+    bottom: 0;
+    background: #f1fcba;
+    width:100%;
+}

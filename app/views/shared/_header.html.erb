@@ -1,0 +1,10 @@
+<div id="top-container">
+    <%= link_to "Silesialinks", root_path, id: "header" %>
+    <%= render 'shared/messages' %>
+    <%# render 'layouts/navbar' %>
+</div>
+
+<script>
+    $("#top-container").css("height", $(window).height()/5);
+    $("#header").css("margin-top", $(window).height()/14);
+</script>
