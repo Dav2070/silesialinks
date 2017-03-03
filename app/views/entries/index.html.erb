@@ -1,5 +1,6 @@
-<h1 align="center">Alle Einträge</h1>
+<h1 align="center" class="header-normal">Alle Einträge</h1>
 
+<div align="center"><%= will_paginate @entries %></div>
 <!-- Show all entries -->
 <%= render "shared/entries_list" %>
 
@@ -8,3 +9,4 @@
     <%= link_to "Neuer Eintrag", new_entry_path, class: "entries_link" %>
   <% end %>
 </div>
+<div align="center"><%= will_paginate @entries %></div>

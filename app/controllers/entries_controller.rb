@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
     before_action :authenticate_user!, only: [:new, :create]
     
     def index
-        @entries = Entry.all
+        @entries = Entry.paginate(page: params[:page], per_page: 10).order('created_at DESC')
     end
     
     def new
