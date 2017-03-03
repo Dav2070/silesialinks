@@ -1,5 +1,5 @@
 <div align="center">
-    <h1><%= @entry.title %>&nbsp;&nbsp;<small><%= @entry.date %></small>
+    <h1><%= @entry.title %>&nbsp;&nbsp;<small><%= @entry.date.strftime('%a %d %b %Y') %></small>
             <% if user_signed_in? %>&nbsp;
                 <%= link_to edit_entry_path do %>
                     <span class="glyphicon glyphicon-pencil icon-button" aria-hidden="true"></span>

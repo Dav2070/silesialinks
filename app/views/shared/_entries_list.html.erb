@@ -3,7 +3,7 @@
       <div class="col-xs-8 col-xs-offset-2">
         <div class="well well-lg">
           <div class="article-title">
-            <%= link_to entry.title, entry_path(entry) %>
+            <%= link_to entry.title + "     " + entry.date.strftime('%a %d %b %Y'), entry_path(entry) %>
           </div>
           <div class="article-body">
             <%= truncate(entry.text.html_safe, length: 1000) %>

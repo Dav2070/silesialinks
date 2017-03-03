@@ -26,6 +26,21 @@ class EntriesController < ApplicationController
        @entry = Entry.find(params[:id])
     end
     
+    def edit
+       @entry = Entry.find(params[:id])
+    end
+    
+    def update
+        @entry = Entry.find(params[:id])
+        
+        if @entry.update(entry_params)
+          flash[:success] = "Eintrag wurde erfolgreich gespeichert!"
+          redirect_to entry_path(@entry)
+        else
+          render 'edit'
+        end
+    end
+    
     def destroy
         @entry = Entry.find(params[:entry_id])
         @entry.destroy
