@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'start#index'
   
+  delete 'entries/:entry_id', to: 'entries#destroy'
   resources :entries
 
   # Example of regular route:

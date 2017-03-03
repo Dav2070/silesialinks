@@ -1,12 +1,13 @@
-<h1 align="center" class="header-normal">Alle Einträge</h1>
+<h1 align="center" class="header-normal">Alle Einträge&nbsp;
+      <% if user_signed_in? %>
+        <%= link_to new_entry_path do %>
+          <span class="glyphicon glyphicon-plus icon-button" aria-hidden="true"></span>
+        <% end %>
+      <% end %></h1>
 
 <div align="center"><%= will_paginate @entries %></div>
+
 <!-- Show all entries -->
 <%= render "shared/entries_list" %>
 
-<div>
-  <% if user_signed_in? %>
-    <%= link_to "Neuer Eintrag", new_entry_path, class: "entries_link" %>
-  <% end %>
-</div>
 <div align="center"><%= will_paginate @entries %></div>

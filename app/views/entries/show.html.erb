@@ -2,10 +2,10 @@
     <h1><%= @entry.title %>&nbsp;&nbsp;<small><%= @entry.date %></small>
             <% if user_signed_in? %>&nbsp;
                 <%= link_to edit_entry_path do %>
-                    <span class="glyphicon glyphicon-pencil edit-button" aria-hidden="true"></span>
+                    <span class="glyphicon glyphicon-pencil icon-button" aria-hidden="true"></span>
                 <% end %>
-                <%= link_to entries_path(@entry), method: :delete, data: {confirm: "Willst du diesen Eintrag wirklich löschen?"} do %>
-                    <span class="glyphicon glyphicon-trash delete-button" aria-hidden="true"></span>
+                <%= link_to entry_path(@entry), method: :delete, data: {confirm: "Willst du diesen Eintrag wirklich löschen?"} do %>
+                    <span class="glyphicon glyphicon-trash icon-button" aria-hidden="true"></span>
                 <% end %>
             <% end %></h1>
     <p><%= @entry.text.html_safe %></p>
