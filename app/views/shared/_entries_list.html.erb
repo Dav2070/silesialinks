@@ -6,7 +6,7 @@
             <%= link_to entry.title + "     " + entry.date.strftime('%a %d %b %Y'), entry_path(entry) %>
           </div>
           <div class="article-body">
-            <%= truncate(entry.text.html_safe, length: 1000) %>
+            <%= truncate(entry.text.html_safe, length: 5000) %>
           </div>
           <% if user_signed_in? && (current_user == entry.user) %>
             <div class="article-actions">
