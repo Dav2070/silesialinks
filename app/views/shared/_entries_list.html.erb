@@ -2,10 +2,10 @@
     <div class="row">
       <div class="col-xs-8 col-xs-offset-2">
         <div class="well well-lg">
-          <div class="article-title">
+          <div>
             <%= link_to entry.title + "     " + entry.date.strftime('%a %d %b %Y'), entry_path(entry) %>
           </div>
-          <div class="article-body">
+          <div>
             <%= truncate(entry.text.html_safe, length: 5000) %>
           </div>
         </div>

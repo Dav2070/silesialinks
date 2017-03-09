@@ -3,9 +3,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
  #before_action :configure_account_update_params, only: [:update]
 
  # GET /resource/sign_up
- # def new
- #   super
- # end
+ def new
+   if params[:passwort] == ENV["REGISTRATION_PASSWORD"]
+      super
+   else
+      flash[:danger] = "Du kannst dich nicht registrieren."
+      redirect_to root_path
+   end
+ end
 
  # POST /resource
  # def create
