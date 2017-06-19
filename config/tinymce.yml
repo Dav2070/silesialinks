@@ -1,6 +1,26 @@
 toolbar:
-  - styleselect | bold italic | undo redo
-  - image | link
+  - bold italic | undo redo | help | fullscreen | preview
+  - image | media | link | emoticons | charmap | table
+  - paste | anchor | forecolor backcolor | searchreplace
 plugins:
   - image
   - link
+  - emoticons
+  - fullscreen
+  - paste
+  - table
+  - autolink
+  - anchor
+  - autoresize
+  - charmap
+  - contextmenu
+  - textcolor
+  - colorpicker
+  - help
+  - image
+  - imagetools
+  - media
+  - print
+  - preview
+  - searchreplace
+  - wordcount
