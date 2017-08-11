@@ -3,12 +3,15 @@
       <div class="col-xs-8 col-xs-offset-2">
         <div class="well well-lg">
           <div>
-            <%= link_to entry.title + "     " + entry.date.strftime('%a %d %b %Y'), entry_path(entry) %>
+            <%= link_to entry.title, entry_path(entry), class: "entries-list-title" %>
+            <small><%= entry.date.strftime('%d. %b %Y') %></small>
           </div>
           <div>
-            <%= truncate(entry.text.html_safe, length: 5000) %>
+            <%= truncate(entry.text, length: 1000, :escape => false) %>
           </div>
         </div>
+        
+        <%= link_to "Alle Einträge", entries_path, class: "btn btn-primary", align: "left" if @index_page %>
       </div>
     </div>
 <% end %>

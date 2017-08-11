@@ -2,6 +2,7 @@ class StartController < ApplicationController
    
    def index
       @entries = Array.new
+      @index_page = true
       
       @all_entries = Entry.all.reverse
       @entries = Array.new
