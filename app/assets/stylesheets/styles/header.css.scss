@@ -17,9 +17,16 @@
     margin-top: 200px;
 }
 
-.navbar{
-    position: absolute;
-    bottom: 0;
-    background: #f1fcba;
-    width:100%;
+.navbar-custom{
+	background-color: white;
+	margin-top: -50px;
+}
+
+.navbar-link{
+	color:black;
+	font-size:110%;
+}
+
+.icon-bar{
+	background-color:black;
 }
