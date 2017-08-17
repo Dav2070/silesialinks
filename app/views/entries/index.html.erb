@@ -5,9 +5,9 @@
         <% end %>
       <% end %></h1>
 
-<div align="center"><%= will_paginate @entries %></div>
+<div align="center"><%= will_paginate @entries, :previous_label => t("previous"), :next_label => t("next") %></div>
 
 <!-- Show all entries -->
 <%= render "shared/entries_list" %>
 
-<div align="center"><%= will_paginate @entries %></div>
+<div align="center"><%= will_paginate @entries, :previous_label => t("previous"), :next_label => t("next") %></div>

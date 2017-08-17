@@ -1,6 +1,6 @@
 <div class="container row">
     <div class="col-lg-8 col-lg-offset-4">
-        <h1><%= @entry.title %>&nbsp;&nbsp;<small><%= @entry.date.strftime('%d. %b %Y') %></small>
+        <h1><%= @entry.title %>&nbsp;&nbsp;<small><%= I18n.l @entry.date, :format => :wd %></small>
             <% if user_signed_in? %>&nbsp;
                 <%= link_to edit_entry_path do %>
                     <span class="glyphicon glyphicon-pencil icon-button" aria-hidden="true"></span>

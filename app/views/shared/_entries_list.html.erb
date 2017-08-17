@@ -4,7 +4,8 @@
       <div class="well well-lg">
         <div>
           <%= link_to entry.title, entry_path(entry), class: "entries-list-title" %>
-          <small><%= entry.date.strftime('%d. %b %Y') %></small>
+       <!--   <small><%# entry.date.strftime('%a, %d. %b %Y') %></small> -->
+          <small><%= I18n.l entry.date, :format => :wd %></small>
         </div>
         <div>
           <%# truncate(entry.text, length: 1000, :escape => false) %>
