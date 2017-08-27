@@ -2,7 +2,67 @@ class EntriesController < ApplicationController
     before_action :authenticate_user!, only: [:new, :create]
     
     def index
-        @entries = Entry.paginate(page: params[:page], per_page: 10).order('created_at DESC')
+        @entries = Array.new
+        @all_entries = Entry.all.order("date ASC")
+        
+        # Get the newest entry
+        current_month = Time.now.month
+        current_day = Time.now.day
+        
+        @all_entries.each do |e|
+            if e.date.month == current_month
+                #puts e.date.month
+            end
+        end
+        
+        # Create an array of each months from the current reversed
+        months = Array.new
+        (1..12).to_a.each do |m|
+            if current_month+m > 12
+                months.push(current_month+m - 12)
+            else
+                months.push(current_month+m)
+            end
+        end
+        months.reverse!
+        months.push(current_month)
+        
+        current_month_first_part_added = false
+        # Iterate each month
+        months.each do |m|
+            # Get all entries of the month
+            entries = Array.new
+            @all_entries.each do |e|
+                if e.date.month == m
+                    entries.push(e)
+                end
+            end
+            
+            entries.sort_by!{ |e| e.date.day }.reverse!
+            
+            if current_month == m && !current_month_first_part_added
+                # Add the first part of the current month
+                entries.each do |e|
+                    if e.date.day <= current_day
+                        @entries.push(e)
+                    end
+                end
+                current_month_first_part_added = true
+            elsif current_month == m && current_month_first_part_added
+                # Add the second part of the current month
+                entries.each do |e|
+                    if e.date.day > current_day
+                        @entries.push(e)
+                    end
+                end
+            else
+                entries.each { |e| @entries.push(e) }
+            end
+        end
+        
+        puts "--------------"
+        @entries.each { |e| puts e.date }
+        @entries = @entries.paginate(page: params[:page], per_page: 10)
     end
     
     def new
