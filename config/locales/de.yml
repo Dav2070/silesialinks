@@ -44,7 +44,7 @@ de:
       default: "%d.%m.%Y"
       long: "%e. %B %Y"
       short: "%e. %b"
-      wd: "%a, %d. %b %Y"
+      wd: "%A, %d. %b %Y"
     month_names:
     -
     - Januar

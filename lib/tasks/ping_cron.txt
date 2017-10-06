@@ -1,0 +1,1 @@
+0 4 * * * curl http://random-photo-feed-bot.herokuapp.com/
