@@ -1,3 +1,0 @@
-namespace :tasks do
-   
-end
