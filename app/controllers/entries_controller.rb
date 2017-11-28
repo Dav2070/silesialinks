@@ -60,7 +60,6 @@ class EntriesController < ApplicationController
             end
         end
         
-        puts "--------------"
         @entries.each { |e| puts e.date }
         @entries = @entries.paginate(page: params[:page], per_page: 10)
     end
