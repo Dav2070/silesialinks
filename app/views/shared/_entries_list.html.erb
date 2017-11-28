@@ -9,7 +9,7 @@
         </div>
         <div>
           <%# truncate(entry.text, length: 1000, :escape => false) %>
-          <%= html_truncate(entry.text, length: 1000, :omission => "...").html_safe %>
+          <%= html_truncate(entry.text, length: 2000, :omission => "...").html_safe %>
         </div>
       </div>
       
