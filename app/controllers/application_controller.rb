@@ -4,15 +4,16 @@ class ApplicationController < ActionController::Base
    protect_from_forgery with: :exception
    helper_method :log_visit
    
-   def log_visit
+   auth = Dav::Auth.new(:api_key => ENV["DAV_API_KEY"], 
+                        :secret_key => ENV["DAV_SECRET_KEY"], 
+                        :uuid => ENV["DAV_UUID"], 
+                        :environment => Rails.env)
+   
+   define_method :log_visit do
       if session[:ip] == nil || session[:ip] != request.remote_ip
          session[:ip] = request.remote_ip
          
          begin
-            auth = Dav::Auth.new(:api_key => ENV["DAV_API_KEY"], 
-                                 :secret_key => ENV["DAV_SECRET_KEY"], 
-                                 :uuid => ENV["DAV_UUID"], 
-                                 :environment => Rails.env)
             Dav::Event.log(auth, ENV["SILESIALINKS_APP_ID"], "visit_start")
          rescue Exception => e
             puts e.message
