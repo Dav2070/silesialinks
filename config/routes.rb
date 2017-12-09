@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root 'start#index'
   
   delete 'entries/:entry_id', to: 'entries#destroy'
+  get 'feed' => 'entries#feed', format: 'rss'
   resources :entries
 
   # Example of regular route:

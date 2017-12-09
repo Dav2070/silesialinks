@@ -100,6 +100,14 @@ class EntriesController < ApplicationController
         redirect_to root_path
     end
     
+    def feed
+        @entries = Entry.where("created_at >= ?", Time.zone.now.beginning_of_day)
+        
+        respond_to do |format|
+            format.rss { render :layout => false }
+        end
+    end
+    
     private
     def entry_params
         params.require(:entry).permit(:title, :text, :date)
