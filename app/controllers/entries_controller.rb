@@ -9,12 +9,6 @@ class EntriesController < ApplicationController
         current_month = Time.now.month
         current_day = Time.now.day
         
-        @all_entries.each do |e|
-            if e.date.month == current_month
-                #puts e.date.month
-            end
-        end
-        
         # Create an array of each months from the current reversed
         months = Array.new
         (1..12).to_a.each do |m|
@@ -60,7 +54,6 @@ class EntriesController < ApplicationController
             end
         end
         
-        @entries.each { |e| puts e.date }
         @entries = @entries.paginate(page: params[:page], per_page: 10)
     end
     
