@@ -101,7 +101,7 @@ class EntriesController < ApplicationController
     end
     
     def feed
-        @entries = Entry.where("created_at >= ?", Time.zone.now.beginning_of_day)
+        @entries = get_entries_of_today
         
         respond_to do |format|
             format.rss { render :layout => false }
