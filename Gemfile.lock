@@ -47,11 +47,10 @@ GEM
     bcrypt (3.1.11)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.3.7)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
-    bootstrap-will_paginate (1.0.0)
-      will_paginate
+    bootstrap (4.0.0)
+      autoprefixer-rails (>= 6.0.3)
+      popper_js (>= 1.12.9, < 2)
+      sass (>= 3.5.2)
     builder (3.2.3)
     byebug (10.0.1)
     coffee-rails (4.1.1)
@@ -98,6 +97,7 @@ GEM
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
     pg (0.21.0)
+    popper_js (1.12.9)
     puma (3.11.3)
     rack (1.6.9)
     rack-test (0.6.3)
@@ -188,8 +188,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootstrap-sass
-  bootstrap-will_paginate
+  bootstrap (~> 4.0.0)
   byebug
   coffee-rails (~> 4.1.0)
   dav!
