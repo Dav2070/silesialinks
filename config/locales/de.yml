@@ -45,6 +45,7 @@ de:
       long: "%e. %B %Y"
       short: "%e. %b"
       wd: "%A, %d. %b %Y"
+      lwd: "%A, %d %B %Y"
     month_names:
     -
     - Januar

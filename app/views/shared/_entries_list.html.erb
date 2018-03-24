@@ -1,19 +1,17 @@
 <% @entries.each do |entry| %>
-  <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
-      <div class="well well-lg">
-        <div>
-          <%= link_to entry.title, entry_path(entry), class: "entries-list-title" %>
-       <!--   <small><%# entry.date.strftime('%a, %d. %b %Y') %></small> -->
-          <small><%= I18n.l entry.date, :format => :wd %></small>
-        </div>
-        <div>
-          <%# truncate(entry.text, length: 1000, :escape => false) %>
-          <%= html_truncate(entry.text, length: 2000, :omission => "...").html_safe %>
-        </div>
-      </div>
+  	<div class="row">
+    	<div class="col-xs-8 col-xs-offset-2">
+      	<div class="well well-lg">
+        		<div>
+          		<%= link_to entry.title, entry_path(entry), class: "entries-list-title" %>
+          		<small><%= I18n.l entry.date, :format => :wd %></small>
+        		</div>
+				<div>
+					<%= html_truncate(entry.text, length: 2000, :omission => "...").html_safe %>
+				</div>
+      	</div>
       
-      <%= link_to "Alle Einträge", entries_path, class: "btn btn-primary", align: "left" if @index_page && entry == @entries.last %>
-    </div>
-  </div>
+			<%= link_to "Alle Einträge", entries_path, class: "btn btn-primary", align: "left" if @index_page && entry == @entries.last %>
+    	</div>
+  	</div>
 <% end %>

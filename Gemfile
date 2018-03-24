@@ -25,12 +25,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap', '~> 4.0.0'
 gem 'devise'
 gem 'will_paginate', '3.1.0'
-#gem 'bootstrap-will_paginate'
 gem 'tinymce-rails'
 gem 'dav', github: 'Dav2070/dav-gem'
 
 # Use puma as web server
 gem 'puma'
+
+# Font Awesome
+gem 'font-awesome-rails'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
