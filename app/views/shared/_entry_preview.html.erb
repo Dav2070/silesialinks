@@ -1,0 +1,11 @@
+<div class="card my-4">
+   <div class="card-header">
+      <%= link_to entry.title, entry_path(entry), class: "entries-list-title" %>
+      <small class="ml-2"><%= I18n.l entry.date, :format => :wd %></small>
+   </div>
+   <div class="card-body">
+      <p class="card-text"><%= html_truncate(entry.text, length: 2000, :omission => "...").html_safe %></p>
+   </div>
+</div>
+
+<%= link_to "Alle Einträge", entries_path, class: "btn btn-primary", align: "left" if @index_page && entry == @entries.last %>

@@ -1,40 +1,22 @@
 <%= render 'shared/errors', obj: @entry %>
 
-<div class="row">
-  <div class="col-xs-12">
-
-    <%= form_for(@entry, :html => {class: "form-horizontal", role: "form"}) do |f| %>
-    <div class="form-group">
-      <div class="control-label col-sm-2">
-        <%= f.label "Titel" %>
-      </div>
-      <div class="col-sm-8">
-        <%= f.text_field :title, class: "form-control", placeholder: "Titel", autofocus:true %>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="control-label col-sm-2">
-        <%= f.label :text %>
-      </div>
-      <div class="col-sm-8">
-        <%= f.text_area :text, class: "form-control tinymce", placeholder: "Text", rows: 10 %>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="control-label col-sm-2">
-        <%= f.label "Datum" %>
-      </div>
-      <div class="col-sm-8">
-        <%= f.date_field :date, class: "form-control", placeholder: "Datum" %>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <%= f.submit "Speichern", class: "btn btn-primary btn-lg" %>
-        <p><%= link_to "Zurück zu allen Einträgen", entries_path %></p>
-      </div>
-    </div>
-    <% end %>
-  </div>
+<%= form_for @entry do |f| %>
+<div class="form-group">
+	<%= f.label "Titel" %>
+	<%= f.text_field :title, class: "form-control", placeholder: "Titel", autofocus:true %>
 </div>
+<div class="form-group">
+	<%= f.label :text %>
+	<%= f.text_area :text, class: "form-control tinymce", placeholder: "Text", rows: 10 %>
+</div>
+<div class="form-group">
+	<%= f.label "Datum" %>
+	<%= f.date_field :date, class: "form-control", placeholder: "Datum" %>
+</div>
+<div class="form-group">
+	<%= f.submit "Speichern", class: "btn btn-primary" %>
+	<p class="mt-2"><%= link_to "Zurück zu allen Einträgen", entries_path %></p>
+</div>
+<% end %>
+
 <%= tinymce %>

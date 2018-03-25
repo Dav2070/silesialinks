@@ -1,17 +1,19 @@
-<% @entries.each do |entry| %>
-  	<div class="row">
-    	<div class="col-xs-8 col-xs-offset-2">
-      	<div class="well well-lg">
-        		<div>
-          		<%= link_to entry.title, entry_path(entry), class: "entries-list-title" %>
-          		<small><%= I18n.l entry.date, :format => :wd %></small>
-        		</div>
-				<div>
-					<%= html_truncate(entry.text, length: 2000, :omission => "...").html_safe %>
-				</div>
-      	</div>
-      
-			<%= link_to "Alle Einträge", entries_path, class: "btn btn-primary", align: "left" if @index_page && entry == @entries.last %>
-    	</div>
-  	</div>
-<% end %>
+<div class="container">
+	<% if @index_page %><h1 class="mt-3 mb-0">Heutige Ereignisse</h1><% end %>
+	<% if !@index_page %>
+	<h1 class="header-normal mt-3 mb-0 text-center">
+		Alle Einträge
+		<% if user_signed_in? %>
+			<%= link_to new_entry_path do %>
+				<%= fa_icon "plus", class: "icon-button" %>
+			<% end %>
+		<% end %>
+	</h1>
+	<% end %>
+
+	<%= render 'shared/messages' %>
+
+	<% @entries.each do |entry| %>
+		<%= render 'shared/entry_preview', entry: entry %>
+	<% end %>
+</div>

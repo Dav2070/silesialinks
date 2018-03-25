@@ -2,8 +2,7 @@
 	<div class="container">
 		<a class="navbar-brand" href="/">Silesialinks</a>
 		<button class="navbar-toggler navbar-toggler-right bg-primary text-uppercase text-white" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-			Menu
-			<i class="fa fa-bars"></i>
+			<%= fa_icon "bars", style: "font-size: 17px" %>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
@@ -12,7 +11,7 @@
 				</li>
 				<% if user_signed_in? %>
 				<li class="nav-item mx-0 mx-lg-1">
-					<%= link_to "Log out", destroy_user_session_path, class: "nav-link py-3 px-0 px-lg-3", method: :delete %>
+					<%= link_to "Abmelden", destroy_user_session_path, class: "nav-link py-3 px-0 px-lg-3", method: :delete %>
 				</li>
 				<% end %>
 			</ul>
