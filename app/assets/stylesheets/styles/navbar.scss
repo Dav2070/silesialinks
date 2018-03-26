@@ -3,7 +3,7 @@
 // Styling for the navbar
 #mainNav {
    font-family: 'Roboto', Arial, sans-serif;
-   background-color: $secondColor;
+   background-color: $firstColor;
    padding-top: 1rem;
    padding-bottom: 1rem;
    .navbar-brand {
@@ -32,6 +32,9 @@
       font-size: 80%;
       padding: 0.8rem;
    }
+}
+#navbar-toggle-button{
+   background-color: $firstColor;
 }
 @media(min-width:992px) {
    #mainNav {

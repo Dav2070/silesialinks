@@ -24,7 +24,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap', '~> 4.0.0'
 gem 'devise'
-gem 'will_paginate', '3.1.0'
+gem 'will_paginate-bootstrap4'
 gem 'tinymce-rails'
 gem 'dav', github: 'Dav2070/dav-gem'
 
