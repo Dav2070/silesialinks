@@ -63,7 +63,7 @@ class EntriesController < ApplicationController
    
 	def create
 		@entry = Entry.new(entry_params)
-		@entry.user_id = current_user
+		@entry.user_id = current_user.id
 		
 		if @entry.save
 			flash[:success] = "Eintrag wurde gespeichert."
