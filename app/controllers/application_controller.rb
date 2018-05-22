@@ -10,7 +10,8 @@ class ApplicationController < ActionController::Base
                         :environment => Rails.env)
    
    define_method :log_visit do
-      if session[:ip] == nil || session[:ip] != request.remote_ip
+      if (session[:ip] == nil || session[:ip] != request.remote_ip) && !browser.bot?
+         
          session[:ip] = request.remote_ip
          
          begin
