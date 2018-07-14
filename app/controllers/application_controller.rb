@@ -4,22 +4,35 @@ class ApplicationController < ActionController::Base
    protect_from_forgery with: :exception
    helper_method :log_visit
    
-   auth = Dav::Auth.new(:api_key => ENV["DAV_API_KEY"], 
-                        :secret_key => ENV["DAV_SECRET_KEY"], 
-                        :uuid => ENV["DAV_UUID"], 
-                        :environment => Rails.env)
+   def get_auth_object
+      auth = Dav::Auth.new(:api_key => ENV["DAV_API_KEY"], 
+                           :secret_key => ENV["DAV_SECRET_KEY"], 
+                           :uuid => ENV["DAV_UUID"], 
+                           :environment => Rails.env)
+   end
    
    define_method :log_visit do
-      if (session[:ip] == nil || session[:ip] != request.remote_ip) && !browser.bot?
-         
-         session[:ip] = request.remote_ip
-         
-         begin
-            Dav::Event.log(auth, ENV["SILESIALINKS_APP_ID"], "visit_start")
-         rescue Exception => e
-            puts e.message
-         end
-      end
+      if session[:ip] != request.remote_ip
+			# Log visit
+			log("visit")
+			session[:ip] = request.remote_ip
+		end
+   end
+
+   def log(event_name)
+		if !browser.bot?
+			properties = Hash.new
+			properties["browser_name"] = browser.name
+			properties["browser_version"] = browser.version
+			properties["os_name"] = browser.platform.name
+			properties["os_version"] = browser.platform.version
+
+			begin
+				Dav::Event.log(get_auth_object.api_key, ENV["SILESIALINKS_APP_ID"], event_name, properties, true)
+			rescue Exception => e
+				puts e.message
+			end
+		end
    end
    
    def get_entries_of_today

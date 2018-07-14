@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/Dav2070/dav-gem.git
-  revision: cba4b20aa093a6fac83e4b4583b683d9272fab1c
+  revision: a02b3670cfc032424a84addbeb93b5aa0b99cddf
   specs:
-    dav (0.2)
+    dav (0.5)
 
 GEM
   remote: https://rubygems.org/
@@ -42,9 +42,9 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.4)
-    autoprefixer-rails (8.2.0)
+    autoprefixer-rails (8.6.5)
       execjs
-    bcrypt (3.1.11)
+    bcrypt (3.1.12)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
     bootstrap (4.0.0)
@@ -53,7 +53,7 @@ GEM
       sass (>= 3.5.2)
     browser (2.5.3)
     builder (3.2.3)
-    byebug (10.0.1)
+    byebug (10.0.2)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -62,7 +62,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
-    crass (1.0.3)
+    crass (1.0.4)
     debug_inspector (0.0.3)
     devise (4.4.3)
       bcrypt (~> 3.0)
@@ -70,11 +70,15 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    dotenv (2.5.0)
+    dotenv-rails (2.5.0)
+      dotenv (= 2.5.0)
+      railties (>= 3.2, < 6.0)
     erubis (2.7.0)
     execjs (2.7.0)
-    ffi (1.9.23)
-    font-awesome-rails (4.7.0.3)
-      railties (>= 3.2, < 5.2)
+    ffi (1.9.25)
+    font-awesome-rails (4.7.0.4)
+      railties (>= 3.2, < 6.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (0.9.5)
@@ -82,7 +86,7 @@ GEM
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
-    jquery-rails (4.3.1)
+    jquery-rails (4.3.3)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
@@ -96,13 +100,13 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     multi_json (1.13.1)
-    nokogiri (1.8.2)
+    nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
     pg (0.21.0)
     popper_js (1.12.9)
-    puma (3.11.3)
-    rack (1.6.9)
+    puma (3.12.0)
+    rack (1.6.10)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.10)
@@ -158,7 +162,7 @@ GEM
       rdoc (~> 4.0)
     spring (2.0.2)
       activesupport (>= 4.2)
-    sprockets (3.7.1)
+    sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
     sprockets-rails (3.2.1)
@@ -169,14 +173,14 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
-    tinymce-rails (4.7.9)
+    tinymce-rails (4.8.0)
       railties (>= 3.1.1)
-    turbolinks (5.1.0)
+    turbolinks (5.1.1)
       turbolinks-source (~> 5.1)
     turbolinks-source (5.1.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (4.1.8)
+    uglifier (4.1.15)
       execjs (>= 0.3.0, < 3)
     warden (1.2.7)
       rack (>= 1.0)
@@ -199,6 +203,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   dav!
   devise
+  dotenv-rails
   font-awesome-rails
   jbuilder (~> 2.0)
   jquery-rails
