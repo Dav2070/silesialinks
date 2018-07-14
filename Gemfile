@@ -37,6 +37,9 @@ gem 'font-awesome-rails'
 # Browser detection
 gem 'browser'
 
+# IP location
+gem 'ipinfo_io', github: "ipinfo/ruby"
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
