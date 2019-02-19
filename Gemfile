@@ -39,7 +39,7 @@ gem 'font-awesome-rails'
 gem 'browser'
 
 # IP location
-gem 'IPinfo', '~> 0.1.2'
+gem 'geocoder'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
