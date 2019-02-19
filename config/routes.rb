@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'start#index'
   get 'impressum', to: 'start#impressum'
   get 'datenschutz', to: 'start#datenschutz'
-  
+
   delete 'entries/:entry_id', to: 'entries#destroy'
   get 'feed' => 'entries#feed', format: 'rss'
   resources :entries
