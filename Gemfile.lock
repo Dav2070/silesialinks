@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/Dav2070/dav-gem.git
+  remote: https://github.com/dav-apps/dav-gem.git
   revision: 59b89edce490e44f60eaa3bb7867d00c074a4be4
   specs:
     dav (1.1)
@@ -239,4 +239,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   2.0.1
+   2.0.2

@@ -27,7 +27,7 @@ gem 'bootstrap'
 gem 'devise'
 gem 'will_paginate-bootstrap4'
 gem 'tinymce-rails'
-gem 'dav', github: 'Dav2070/dav-gem'
+gem 'dav', github: 'dav-apps/dav-gem'
 
 # Use puma as web server
 gem 'puma'
